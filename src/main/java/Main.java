@@ -5,7 +5,6 @@ import java.util.function.ToDoubleBiFunction;
 public class Main {
 
 
-
     // Main Menu Screen
     public static void mainMenu() {
 
