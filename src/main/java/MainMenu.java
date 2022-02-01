@@ -30,12 +30,12 @@ public class MainMenu {
 
             // Checks which game mode was selected, and if the selected game mode is valid.
             if (gameMode.equals("1p") || gameMode.equals("1P")) {
-                System.out.println("You selected: Single Player!");
+                System.out.println("You selected: Single Player!\n");
                 mode = 1;
                 validSelection = true;
 
             } else if (gameMode.equals("2p") || gameMode.equals("2P")) {
-                System.out.println("You selected: Multiplayer!");
+                System.out.println("You selected: Multiplayer!\n");
                 mode = 2;
                 validSelection = true;
 

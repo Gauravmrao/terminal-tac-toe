@@ -14,13 +14,12 @@ public class Main {
     // Based on the value of "mode", the correct function should be called.
 
 
-    public void game() {
-        // ArrayList;
-    }
 
     public static void main(String[] args) {
 
     mainMenu();
+    Board board = new Board();
+    board.showBoard();
 
     }
 
