@@ -1,10 +1,7 @@
-
 import java.util.Scanner;
 
 public class MainMenu {
-
     public MainMenu() {}
-
 
 
     private void introMessage() {
@@ -13,7 +10,7 @@ public class MainMenu {
         System.out.println("\n\nThanks for playing Terminal-Tac-Toe!");
         System.out.println("Select a game mode, single player (1p) or multiplayer (2p).");
     }
-
+    
 
     private int gameModeSelection() {
         // Loops until the user selects the proper game mode, then returns it.

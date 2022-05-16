@@ -1,6 +1,3 @@
-// import java.util.ArrayList;
-// import java.util.function.ToDoubleBiFunction;
-
 // The Main Class
 public class Main {
 

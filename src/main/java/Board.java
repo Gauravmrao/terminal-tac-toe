@@ -1,9 +1,3 @@
-import java.lang.reflect.InaccessibleObjectException;
-
-import javax.crypto.AEADBadTagException;
-
-// import java.util.ArrayList;
-
 public class Board {
 
     // Encapsulate a board instance in the form of a 2D array
@@ -56,10 +50,7 @@ public class Board {
             board[2][1] = player;
         } else if (index.equals("C3") || index.equals("c3")) {
             board[2][2] = player;
-        } else {
-            throw new InaccessibleObjectException();
         }
-
     }
 
 
