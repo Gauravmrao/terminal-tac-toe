@@ -7,7 +7,7 @@ public class MainMenu {
 
 
 
-    public void introMessage() {
+    private void introMessage() {
         // Introductory Message.
 
         System.out.println("\n\nThanks for playing Terminal-Tac-Toe!");
@@ -15,7 +15,7 @@ public class MainMenu {
     }
 
 
-    public int gameModeSelection() {
+    private int gameModeSelection() {
         // Loops until the user selects the proper game mode, then returns it.
 
         int mode = 0; // 0 for unselected game mode, 1 for single player, 2 for multiplayer.
@@ -33,23 +33,24 @@ public class MainMenu {
                 System.out.println("You selected: Single Player!\n");
                 mode = 1;
                 validSelection = true;
+                ModeSelection.close();
 
             } else if (gameMode.equals("2p") || gameMode.equals("2P")) {
                 System.out.println("You selected: Multiplayer!\n");
                 mode = 2;
                 validSelection = true;
+                ModeSelection.close();
 
             } else {
                 System.out.println("Invalid game mode.");
             }
+            
         }
         return mode;
     }
 
-
+    // Runs the main menu when called.
     public int runMainMenu() {
-        // Runs the main menu when called.
-
         introMessage();
         int mode = gameModeSelection();
         return mode;
