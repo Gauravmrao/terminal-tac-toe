@@ -15,11 +15,17 @@ public class Main {
             Multiplayer multiplayer = new Multiplayer(board);
             multiplayer.playMultiplayer();
         } else {
-
+            System.out.println("Single player functionality hasn't been implemented yet");
         }
 
 
 
     }
+
+
+    // TODO:
+    // 1. Implement single player functionality
+    //      a. Easy, medium, and hard mode
+    // 2. Add a "play again" feature
 
 }
