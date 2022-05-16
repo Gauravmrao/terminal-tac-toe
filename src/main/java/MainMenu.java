@@ -33,13 +33,13 @@ public class MainMenu {
                 System.out.println("You selected: Single Player!\n");
                 mode = 1;
                 validSelection = true;
-                ModeSelection.close();
+                // ModeSelection.close();
 
             } else if (gameMode.equals("2p") || gameMode.equals("2P")) {
                 System.out.println("You selected: Multiplayer!\n");
                 mode = 2;
                 validSelection = true;
-                ModeSelection.close();
+                // ModeSelection.close();
 
             } else {
                 System.out.println("Invalid game mode.");

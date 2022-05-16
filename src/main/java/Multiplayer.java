@@ -7,39 +7,30 @@ public class Multiplayer {
     // Class constructor
     public Multiplayer(Board gameBoard){
         board = gameBoard;
-        player = "X";
+        player = "O";
     }
 
 
     // Successfully completes a move on the board.
-    public void move(){
-        
+    private void move(){
         board.showBoard();
 
         // Gets the player's input and updates the board.
-        System.out.println("\nPlayer " + player + ", Please enter the coordinate of the cell you would like to select.");
-        Scanner move = new Scanner(System.in);
-        String coordinate = move.nextLine();
-
         int moveCompleted = 0;
         while(moveCompleted != 1) {
+            Scanner move = new Scanner(System.in);
+            String coordinate;
+            System.out.println("\nPlayer " + player + ", Please enter the coordinate of the cell you would like to select.");
+            coordinate = move.nextLine();
             moveCompleted = board.updateBoard(coordinate, player);
         }
 
-        // Moves to the next player's turn.
-        if (player.equals("X")) {
-            player = "O";
-        } else {
-            player = "X";
-        }
-
-        move.close();
+        // move.close();
     }
 
-
-    public int checkWin() {
+    // Checks if there is a winner on the board
+    private int checkWin() {
         int winner = 0;
-
 
         if (board.getElement("A1").equals(player) && board.getElement("A2").equals(player) && board.getElement("A3").equals(player)) {
             winner = 1;
@@ -58,13 +49,31 @@ public class Multiplayer {
         } else if (board.getElement("A3").equals(player) && board.getElement("B2").equals(player) && board.getElement("C1").equals(player)) {
             winner = 1;
         }
+
         return winner;
     }
 
 
+    // play the multipler game mode using the functions defined in this class
+    public void playMultiplayer() {
+        int winner = 0;
+        while (winner == 0) {
 
-    //public int gameOver() {
-    //    for ()
-    // }
+            // Moves to the next player's turn.
+            if (player.equals("X")) {
+                player = "O";
+            } else {
+                player = "X";
+            }
+
+            move();
+            winner = checkWin();
+        }
+
+        board.showBoard();
+        System.out.println(player + " Wins!");
+     }
+
+
 
 }

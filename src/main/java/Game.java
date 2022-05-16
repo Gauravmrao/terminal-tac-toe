@@ -2,8 +2,6 @@
 
 public class Game {
 
-
-
     // Encapsulate a board and gamemode
     private Board board;
     private int gameMode;
@@ -15,15 +13,16 @@ public class Game {
     }
 
     // Select the game mode. gameMode = 1 for single player, 2 for multiplayer
-    private void gameModeSelection() {
-        if (gameMode == 1) {
-
+    public void gameModeSelection() {
+        if (gameMode == 2) {
+            runMultiplayer();
         }
     }
 
-    
+    // If multiplayer is selected, run a multiplayer game
     private void runMultiplayer() {
         Multiplayer multiplayer = new Multiplayer(board);
+        multiplayer.playMultiplayer();
     }
 
 

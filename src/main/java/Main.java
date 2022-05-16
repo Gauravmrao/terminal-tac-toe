@@ -20,12 +20,21 @@ public class Main {
         MainMenu menu = new MainMenu();
         int gameMode = menu.runMainMenu();
 
-        // Start a game
-        Game game = new Game(gameMode);
-
-
         Board board = new Board();
-        board.showBoard();
+        if (gameMode == 2) {
+            Multiplayer multiplayer = new Multiplayer(board);
+            multiplayer.playMultiplayer();
+        }
+
+
+
+        // Start a game
+        // Game game = new Game(gameMode);
+        // game.gameModeSelection();
+
+
+        // Board board = new Board();
+        // board.showBoard();
 
     }
 

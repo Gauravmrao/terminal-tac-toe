@@ -1,3 +1,7 @@
+import java.lang.reflect.InaccessibleObjectException;
+
+import javax.crypto.AEADBadTagException;
+
 // import java.util.ArrayList;
 
 public class Board {
@@ -33,27 +37,39 @@ public class Board {
 
     // Sets the element in the board at a specified index with the input player value.
     public void setElement(String index, String player){
-        switch (index) {
-            case "A1", "a1": board[0][0] = player;
-            case "A2", "a2": board[0][1] = player;
-            case "A3", "a3": board[0][2] = player;
-            case "B1", "b1": board[1][0] = player;
-            case "B2", "b2": board[1][1] = player;
-            case "B3", "b3": board[1][2] = player;
-            case "C1", "c1": board[2][0] = player;
-            case "C2", "c2": board[2][1] = player;
-            case "C3", "c3": board[2][2] = player;
+
+        if (index.equals("A1") || index.equals("a1")) {
+            board[0][0] = player;
+        } else if (index.equals("A2") || index.equals("a2")) {
+            board[0][1] = player;
+        } else if (index.equals("A3") || index.equals("a3")) {
+            board[0][2] = player;
+        } else if (index.equals("B1") || index.equals("b1")) {
+            board[1][0] = player;
+        } else if (index.equals("B2") || index.equals("b2")) {
+            board[1][1] = player;
+        } else if (index.equals("B3") || index.equals("b3")) {
+            board[1][2] = player;
+        } else if (index.equals("C1") || index.equals("c1")) {
+            board[2][0] = player;
+        } else if (index.equals("C2") || index.equals("c2")) {
+            board[2][1] = player;
+        } else if (index.equals("C3") || index.equals("c3")) {
+            board[2][2] = player;
+        } else {
+            throw new InaccessibleObjectException();
         }
+
     }
 
 
     // Updates the board with the player's move.
-    public int updateBoard(String playerMove, String player) {
-        if (getElement(playerMove).equals(" ")) {
-            setElement(playerMove, player);
+    public int updateBoard(String index, String player) {
+        if (getElement(index).equals(" ")) {
+            setElement(index, player);
             return 1;
         } else {
-            System.out.println("That spot has already been taken, choose a different spot!");
+            System.out.println("That spot has already been taken or is an invalid input, choose a different spot!");
             return 0;
         }
     }
