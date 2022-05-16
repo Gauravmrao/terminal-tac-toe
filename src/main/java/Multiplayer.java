@@ -53,11 +53,33 @@ public class Multiplayer {
         return winner;
     }
 
+    // checks if the board is full but there is no winner
+    private boolean boardFull() {
+        if (board.getElement("A1").equals(" ") || board.getElement("A2").equals(" ") || board.getElement("A3").equals(" ") ||
+            board.getElement("B1").equals(" ") || board.getElement("B2").equals(" ") || board.getElement("B3").equals(" ") ||
+            board.getElement("C1").equals(" ") || board.getElement("C2").equals(" ") || board.getElement("C3").equals(" ")
+            ) {
+                return false;
+            } else {
+                return true;
+            }
+
+    }
+
 
     // play the multipler game mode using the functions defined in this class
     public void playMultiplayer() {
         int winner = 0;
+        boolean full = false;
         while (winner == 0) {
+
+            // Checks to see if the board is full with a tie
+            full = boardFull();
+            if (full == true) {
+                board.showBoard();
+                System.out.println("Tie game!");
+                return;
+            }
 
             // Moves to the next player's turn.
             if (player.equals("X")) {
@@ -65,7 +87,6 @@ public class Multiplayer {
             } else {
                 player = "X";
             }
-
             move();
             winner = checkWin();
         }
